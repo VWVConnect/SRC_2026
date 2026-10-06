@@ -84,12 +84,9 @@
     }
     const limits = jurisdictionLimits[statYear];
     if (!limits) {
-      const supported = Object.keys(jurisdictionLimits)
-        .map(y => jurisdictionLimits[y].label)
-        .join(' or ');
       throw new Error(
-        'Termination date falls outside the statutory years built into this calculator (' +
-        supported + '). Update the LIMITS table in script.js to add further years.'
+        'This calculator currently supports the 2025 and 2026 statutory years only. ' +
+        'A breakdown for previous years cannot be calculated at this time.'
       );
     }
 
