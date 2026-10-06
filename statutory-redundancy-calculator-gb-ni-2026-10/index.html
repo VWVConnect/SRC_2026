@@ -13,6 +13,7 @@
       <p class="sub">Great Britain and Northern Ireland. Created October 2026.</p>
     </header>
 
+    <div class="split">
     <form id="srp-form" class="card" novalidate>
       <fieldset>
         <legend>Key dates</legend>
@@ -61,33 +62,48 @@
       <p id="form-error" class="error" role="alert" aria-live="polite"></p>
     </form>
 
-    <section id="results" class="card results" hidden aria-live="polite">
-      <h2>Result</h2>
-      <p class="headline">
-        Statutory redundancy pay: <strong id="headline-amount">&pound;0.00</strong>
-      </p>
+    <section id="results" class="card results" aria-live="polite">
+      <div id="results-empty" class="results-empty">
+        <h2>Your result will appear here</h2>
+        <p>Fill in the employee's details on the left and click <strong>Calculate</strong>. The headline statutory redundancy figure and a full breakdown will populate in this panel and update each time you recalculate.</p>
+        <ul class="placeholder-list">
+          <li>Jurisdiction and termination date</li>
+          <li>Complete years of service used (max 20)</li>
+          <li>Weeks of pay split across the three age bands</li>
+          <li>Weekly pay used (actual or capped)</li>
+          <li>Overall award cap, if applied</li>
+        </ul>
+      </div>
 
-      <h3>Breakdown</h3>
-      <dl class="breakdown">
-        <dt>Jurisdiction</dt><dd id="r-jurisdiction"></dd>
-        <dt>Termination date</dt><dd id="r-termination"></dd>
-        <dt>Statutory year applied</dt><dd id="r-statyear"></dd>
-        <dt>Length of continuous service</dt><dd id="r-service"></dd>
-        <dt>Complete years used (max 20)</dt><dd id="r-years"></dd>
-        <dt>Years aged under 22 (half week)</dt><dd id="r-under22"></dd>
-        <dt>Years aged 22 to 40 (one week)</dt><dd id="r-mid"></dd>
-        <dt>Years aged 41 or over (one and a half weeks)</dt><dd id="r-over41"></dd>
-        <dt>Total weeks of pay</dt><dd id="r-weeks"></dd>
-        <dt>Weekly pay entered</dt><dd id="r-pay-entered"></dd>
-        <dt>Statutory weekly cap</dt><dd id="r-cap-weekly"></dd>
-        <dt>Weekly pay used</dt><dd id="r-pay-used"></dd>
-        <dt>Subtotal (weeks &times; weekly pay used)</dt><dd id="r-subtotal"></dd>
-        <dt>Overall award cap</dt><dd id="r-cap-overall"></dd>
-        <dt>Final statutory redundancy pay</dt><dd id="r-final"></dd>
-      </dl>
+      <div id="results-filled" hidden>
+        <h2>Result</h2>
+        <p class="headline">
+          Statutory redundancy pay: <strong id="headline-amount">&pound;0.00</strong>
+        </p>
 
-      <p class="note" id="r-note"></p>
+        <h3>Breakdown</h3>
+        <dl class="breakdown">
+          <dt>Jurisdiction</dt><dd id="r-jurisdiction"></dd>
+          <dt>Termination date</dt><dd id="r-termination"></dd>
+          <dt>Statutory year applied</dt><dd id="r-statyear"></dd>
+          <dt>Length of continuous service</dt><dd id="r-service"></dd>
+          <dt>Complete years used (max 20)</dt><dd id="r-years"></dd>
+          <dt>Years aged under 22 (half week)</dt><dd id="r-under22"></dd>
+          <dt>Years aged 22 to 40 (one week)</dt><dd id="r-mid"></dd>
+          <dt>Years aged 41 or over (one and a half weeks)</dt><dd id="r-over41"></dd>
+          <dt>Total weeks of pay</dt><dd id="r-weeks"></dd>
+          <dt>Weekly pay entered</dt><dd id="r-pay-entered"></dd>
+          <dt>Statutory weekly cap</dt><dd id="r-cap-weekly"></dd>
+          <dt>Weekly pay used</dt><dd id="r-pay-used"></dd>
+          <dt>Subtotal (weeks &times; weekly pay used)</dt><dd id="r-subtotal"></dd>
+          <dt>Overall award cap</dt><dd id="r-cap-overall"></dd>
+          <dt>Final statutory redundancy pay</dt><dd id="r-final"></dd>
+        </dl>
+
+        <p class="note" id="r-note"></p>
+      </div>
     </section>
+    </div>
 
     <footer class="foot">
       <p class="small">Figures are based on the statutory limits in force for terminations on or after 6 April 2025. Always verify against the current gov.uk and nidirect figures before relying on a result.</p>

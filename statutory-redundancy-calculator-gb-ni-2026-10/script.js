@@ -152,12 +152,21 @@
     };
   }
 
+  function showEmpty() {
+    document.getElementById('results-empty').hidden = false;
+    document.getElementById('results-filled').hidden = true;
+  }
+
+  function showFilled() {
+    document.getElementById('results-empty').hidden = true;
+    document.getElementById('results-filled').hidden = false;
+  }
+
   // Validate the form, build an input object, and render the result.
   function onSubmit(e) {
     e.preventDefault();
 
     const errorEl = document.getElementById('form-error');
-    const results = document.getElementById('results');
     errorEl.textContent = '';
 
     const jurisdiction = document.getElementById('jurisdictionToggle').checked ? 'NI' : 'GB';
@@ -185,12 +194,11 @@
 
     function fail(msg) {
       errorEl.textContent = msg;
-      results.hidden = true;
+      showEmpty();
     }
   }
 
   function render(result, meta) {
-    const results = document.getElementById('results');
     const set = (id, value) => { document.getElementById(id).textContent = value; };
 
     const jurisdictionLabel = meta.jurisdiction === 'GB'
@@ -216,7 +224,7 @@
       set('r-cap-overall', '-');
       set('r-final', formatGBP(0));
       document.getElementById('r-note').textContent = result.reason;
-      results.hidden = false;
+      showFilled();
       return;
     }
 
@@ -247,11 +255,11 @@
       notes.push('The subtotal exceeded the overall statutory award cap; the overall cap was applied.');
     }
     document.getElementById('r-note').textContent = notes.join(' ');
-    results.hidden = false;
+    showFilled();
   }
 
   function onReset() {
-    document.getElementById('results').hidden = true;
+    showEmpty();
     document.getElementById('form-error').textContent = '';
   }
 
