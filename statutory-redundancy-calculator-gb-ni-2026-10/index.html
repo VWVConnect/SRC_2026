@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Statutory Redundancy Pay Calculator (GB & NI)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="hdr">
+      <h1>Statutory Redundancy Pay Calculator</h1>
+      <p class="sub">Great Britain and Northern Ireland. Created October 2026.</p>
+    </header>
+
+    <form id="srp-form" class="card" novalidate>
+      <fieldset>
+        <legend>1. Jurisdiction</legend>
+        <label>
+          <span>Where was the employee employed?</span>
+          <select name="jurisdiction" id="jurisdiction" required>
+            <option value="">Please choose</option>
+            <option value="GB">Great Britain (England, Scotland, Wales)</option>
+            <option value="NI">Northern Ireland</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Key dates</legend>
+        <label>
+          <span>Date of birth</span>
+          <input type="date" name="dob" id="dob" required>
+        </label>
+        <label>
+          <span>Employment start date</span>
+          <input type="date" name="startDate" id="startDate" required>
+        </label>
+        <label>
+          <span>Date of redundancy (termination date)</span>
+          <input type="date" name="terminationDate" id="terminationDate" required>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Weekly pay</legend>
+        <label>
+          <span>Gross weekly pay (before tax), in pounds</span>
+          <input type="number" name="weeklyPay" id="weeklyPay" min="0" step="0.01" required>
+        </label>
+        <p class="hint">Enter the employee's actual gross weekly pay. If it exceeds the statutory cap, the calculator will apply the cap automatically and show both figures.</p>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit" class="primary">Calculate</button>
+        <button type="reset" class="secondary">Reset</button>
+      </div>
+
+      <p id="form-error" class="error" role="alert" aria-live="polite"></p>
+    </form>
+
+    <section id="results" class="card results" hidden aria-live="polite">
+      <h2>Result</h2>
+      <p class="headline">
+        Statutory redundancy pay: <strong id="headline-amount">&pound;0.00</strong>
+      </p>
+
+      <h3>Breakdown</h3>
+      <dl class="breakdown">
+        <dt>Jurisdiction</dt><dd id="r-jurisdiction"></dd>
+        <dt>Termination date</dt><dd id="r-termination"></dd>
+        <dt>Statutory year applied</dt><dd id="r-statyear"></dd>
+        <dt>Length of continuous service</dt><dd id="r-service"></dd>
+        <dt>Complete years used (max 20)</dt><dd id="r-years"></dd>
+        <dt>Years aged under 22 (half week)</dt><dd id="r-under22"></dd>
+        <dt>Years aged 22 to 40 (one week)</dt><dd id="r-mid"></dd>
+        <dt>Years aged 41 or over (one and a half weeks)</dt><dd id="r-over41"></dd>
+        <dt>Total weeks of pay</dt><dd id="r-weeks"></dd>
+        <dt>Weekly pay entered</dt><dd id="r-pay-entered"></dd>
+        <dt>Statutory weekly cap</dt><dd id="r-cap-weekly"></dd>
+        <dt>Weekly pay used</dt><dd id="r-pay-used"></dd>
+        <dt>Subtotal (weeks &times; weekly pay used)</dt><dd id="r-subtotal"></dd>
+        <dt>Overall award cap</dt><dd id="r-cap-overall"></dd>
+        <dt>Final statutory redundancy pay</dt><dd id="r-final"></dd>
+      </dl>
+
+      <p class="note" id="r-note"></p>
+    </section>
+
+    <footer class="foot">
+      <p class="small">Figures are based on the statutory limits in force for terminations on or after 6 April 2025. Always verify against the current gov.uk and nidirect figures before relying on a result.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
