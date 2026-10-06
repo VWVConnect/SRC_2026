@@ -15,19 +15,7 @@
 
     <form id="srp-form" class="card" novalidate>
       <fieldset>
-        <legend>1. Jurisdiction</legend>
-        <label>
-          <span>Where was the employee employed?</span>
-          <select name="jurisdiction" id="jurisdiction" required>
-            <option value="">Please choose</option>
-            <option value="GB">Great Britain (England, Scotland, Wales)</option>
-            <option value="NI">Northern Ireland</option>
-          </select>
-        </label>
-      </fieldset>
-
-      <fieldset>
-        <legend>2. Key dates</legend>
+        <legend>Key dates</legend>
         <label>
           <span>Date of birth</span>
           <input type="date" name="dob" id="dob" required>
@@ -43,12 +31,26 @@
       </fieldset>
 
       <fieldset>
-        <legend>3. Weekly pay</legend>
+        <legend>Weekly gross pay (&pound;)</legend>
         <label>
-          <span>Gross weekly pay (before tax), in pounds</span>
-          <input type="number" name="weeklyPay" id="weeklyPay" min="0" step="0.01" required>
+          <span>Gross weekly pay, before tax</span>
+          <input type="number" name="weeklyPay" id="weeklyPay" min="0" step="0.01" placeholder="e.g. 500" required>
         </label>
-        <p class="hint">Enter the employee's actual gross weekly pay. If it exceeds the statutory cap, the calculator will apply the cap automatically and show both figures.</p>
+        <p class="hint">Enter the employee's actual gross weekly pay. If it exceeds the statutory cap, the calculator applies the cap automatically and shows both figures.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Jurisdiction</legend>
+        <div class="toggle-row" role="group" aria-label="Jurisdiction">
+          <span class="side-label">Great Britain</span>
+          <label class="toggle">
+            <input type="checkbox" id="jurisdictionToggle" aria-label="Toggle Northern Ireland">
+            <span class="track" aria-hidden="true"></span>
+            <span class="thumb" aria-hidden="true"></span>
+          </label>
+          <span class="side-label">Northern Ireland</span>
+        </div>
+        <p class="hint" style="text-align:center">Slide the toggle to switch between GB and NI statutory limits.</p>
       </fieldset>
 
       <div class="actions">

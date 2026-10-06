@@ -163,14 +163,13 @@
     const results = document.getElementById('results');
     errorEl.textContent = '';
 
-    const jurisdiction = document.getElementById('jurisdiction').value;
+    const jurisdiction = document.getElementById('jurisdictionToggle').checked ? 'NI' : 'GB';
     const dob = parseISODate(document.getElementById('dob').value);
     const startDate = parseISODate(document.getElementById('startDate').value);
     const terminationDate = parseISODate(document.getElementById('terminationDate').value);
     const weeklyPayRaw = document.getElementById('weeklyPay').value;
     const weeklyPay = parseFloat(weeklyPayRaw);
 
-    if (!jurisdiction) return fail('Please choose a jurisdiction.');
     if (!dob) return fail('Please enter a valid date of birth.');
     if (!startDate) return fail('Please enter a valid employment start date.');
     if (!terminationDate) return fail('Please enter a valid date of redundancy.');
