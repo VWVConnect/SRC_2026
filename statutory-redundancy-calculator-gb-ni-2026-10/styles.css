@@ -354,11 +354,14 @@ button:focus-visible {
   margin-bottom: 4px;
 }
 
-/* Footer */
-.foot .small {
+/* Disclaimer sitting at the foot of the results column */
+.disclaimer {
+  margin: 14px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
   color: var(--ink-soft);
-  font-size: 0.82rem;
-  text-align: center;
+  font-size: 0.78rem;
+  line-height: 1.4;
 }
 
 /* Mobile */
