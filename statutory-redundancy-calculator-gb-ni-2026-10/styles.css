@@ -44,7 +44,7 @@ body {
 .wrap {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 14px 20px 20px;
+  padding: 8px 16px 12px;
 }
 
 .split {
@@ -65,18 +65,18 @@ body {
 
 /* Header */
 .hdr h1 {
-  margin: 0 0 4px;
-  font-size: 1.35rem;
+  margin: 0 0 2px;
+  font-size: 1.3rem;
   font-weight: 600;
   color: var(--ink-soft);
-  padding-bottom: 6px;
+  padding-bottom: 4px;
   border-bottom: 1px solid #c9d0db;
 }
 
 .sub {
-  margin: 6px 0 12px;
+  margin: 4px 0 8px;
   color: var(--ink-soft);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 /* Card */
@@ -84,8 +84,8 @@ body {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
-  padding: 20px 24px 16px;
-  margin-bottom: 12px;
+  padding: 14px 20px 12px;
+  margin-bottom: 10px;
   box-shadow: var(--shadow-card);
 }
 
@@ -93,38 +93,40 @@ body {
 fieldset {
   border: 0;
   padding: 0;
-  margin: 0 0 14px;
+  margin: 0 0 10px;
 }
 
-fieldset:last-of-type { margin-bottom: 4px; }
+fieldset:last-of-type { margin-bottom: 2px; }
 
 legend {
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--ink);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   padding: 0;
 }
 
 /* Labels and fields */
 label {
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
+
+label:last-child { margin-bottom: 0; }
 
 label > span {
   display: block;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--ink);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 input[type="date"],
 input[type="number"],
 input[type="text"] {
   width: 100%;
-  padding: 12px 14px;
+  padding: 8px 12px;
   font-size: 1rem;
   font-family: inherit;
   color: var(--ink);
@@ -146,8 +148,8 @@ input:focus {
 }
 
 .hint {
-  margin: 6px 2px 0;
-  font-size: 0.85rem;
+  margin: 4px 2px 0;
+  font-size: 0.82rem;
   color: var(--ink-soft);
 }
 
@@ -157,7 +159,7 @@ input:focus {
   align-items: center;
   justify-content: center;
   gap: 14px;
-  margin: 6px 0 6px;
+  margin: 2px 0;
 }
 
 .toggle-row .side-label {
@@ -223,21 +225,21 @@ input:focus {
   display: flex;
   gap: 14px;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 button {
   font-family: inherit;
   font-size: 1rem;
   font-weight: 700;
-  padding: 12px 36px;
+  padding: 9px 32px;
   border-radius: var(--radius-pill);
   border: 0;
   cursor: pointer;
   color: #ffffff;
   letter-spacing: 0.2px;
   transition: filter 120ms ease, transform 60ms ease;
-  min-width: 150px;
+  min-width: 140px;
 }
 
 button:hover { filter: brightness(1.05); }
@@ -269,31 +271,31 @@ button:focus-visible {
 
 /* Results */
 .results h2 {
-  margin: 0 0 12px;
-  font-size: 1.15rem;
+  margin: 0 0 8px;
+  font-size: 1.1rem;
   color: var(--ink);
   font-weight: 700;
 }
 
 .results .headline {
-  font-size: 1.05rem;
-  padding: 16px 18px;
+  font-size: 1.02rem;
+  padding: 10px 14px;
   background: var(--panel-bg);
   border-left: 4px solid var(--teal);
   border-radius: var(--radius-input);
   color: var(--ink);
-  margin: 0 0 20px;
+  margin: 0 0 10px;
 }
 
 .headline strong {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--teal);
   display: inline-block;
   margin-left: 6px;
 }
 
 .results h3 {
-  margin: 0 0 10px;
+  margin: 0 0 6px;
   color: var(--ink);
   font-size: 1rem;
   font-weight: 700;
@@ -302,9 +304,9 @@ button:focus-visible {
 .breakdown {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px 20px;
+  gap: 4px 20px;
   margin: 0;
-  padding: 4px 2px;
+  padding: 2px 2px;
 }
 
 .breakdown dt {
@@ -322,10 +324,10 @@ button:focus-visible {
 .note {
   background: #fff7e6;
   border-left: 4px solid #c58b00;
-  padding: 12px 14px;
-  margin-top: 18px;
+  padding: 8px 12px;
+  margin-top: 10px;
   border-radius: var(--radius-input);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--ink);
 }
 
@@ -356,12 +358,12 @@ button:focus-visible {
 
 /* Disclaimer sitting at the foot of the results column */
 .disclaimer {
-  margin: 14px 0 0;
-  padding-top: 10px;
+  margin: 10px 0 0;
+  padding-top: 6px;
   border-top: 1px solid var(--border);
   color: var(--ink-soft);
-  font-size: 0.78rem;
-  line-height: 1.4;
+  font-size: 0.75rem;
+  line-height: 1.35;
 }
 
 /* Mobile */
